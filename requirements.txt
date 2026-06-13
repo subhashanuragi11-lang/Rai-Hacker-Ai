@@ -1,0 +1,6 @@
+aiogram==3.20.0
+aiohttp
+flask
+requests
+python-dotenv
+huggingface_hub
