@@ -36,6 +36,8 @@ MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 HF_MODEL_NAME = "dphn/Dolphin-Mistral-24B-Venice-Edition"
 HF_API_URL = "https://api-inference.huggingface.co/models/dphn/Dolphin-Mistral-24B-Venice-Edition"
 HF_ACCESS_TOKEN = "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"
+print("TOKEN:", HF_ACCESS_TOKEN[:10])
+print("URL:", HF_API_URL)
 
 DB_FILE = "bot_data.db"
 
