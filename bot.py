@@ -440,11 +440,11 @@ async def cb_ask_ai(callback: CallbackQuery):
     )
 
 async def query_ai(prompt: str) -> str:
-     print("MODEL =", HF_MODEL_NAME)
-     print("URL =", HF_API_URL)
-     print("TOKEN =", HF_ACCESS_TOKEN[:10])
+    print("MODEL =", HF_MODEL_NAME)
+    print("URL =", HF_API_URL)
+    print("TOKEN =", HF_ACCESS_TOKEN[:10])
 
-     headers = {
+    headers = {
         "Authorization": f"Bearer {HF_ACCESS_TOKEN}",
         "Content-Type": "application/json"
     }
