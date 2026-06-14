@@ -40,7 +40,7 @@ print("HF TOKEN EXISTS =", bool(HF_ACCESS_TOKEN))
 
 HF_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL_NAME}"
+HF_API_URL = f"https://router.huggingface.co/models/{HF_MODEL_NAME}"
 
 DB_FILE = "bot_data.db"
 
