@@ -19,6 +19,8 @@ from aiogram import Bot, Dispatcher, F, Router
 from aiogram.types import (
     Message, InlineKeyboardMarkup, InlineKeyboardButton,
     CallbackQuery, FSInputFile
+from aiogram.types import BufferedInputFile
+
 )
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -617,11 +619,11 @@ await thinking.delete()
     if len(response) > 4000:
         # Large response - create text file
         file = BufferedInputFile(
-          response.encode(),
-          filename="ai_response.txt"
+            response.encode(),
+            filename="ai_response.txt"
 )
 
-await message.answer_document(file), caption="📄 <b>AI Response (Large)</b>")
+await message.answer_document(file, caption="📄 <b>AI Response (Large)</b>")
     elif is_code_request and total_code_lines > 50:
         # ZIP for large code
         zip_buffer = io.BytesIO()
