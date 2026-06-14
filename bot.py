@@ -350,13 +350,11 @@ def main_menu_kb():
         [InlineKeyboardButton(text="📞 Admin Contact", callback_data="admin_contact")],
     ])
 
-# ─── START ──────────────────────────────────────────────────────────────
-
-    @router.message(Command("ping"))
+# ─── START ────────────────────────────────────────────────────────────── 
+@router.message(Command("ping"))
 async def ping(message: Message):
     await message.answer("PONG")
-    
-    @router.message(Command("start"))
+@router.message(Command("start"))
 async def cmd_start(message: Message):
     
     user_id = message.from_user.id
