@@ -623,7 +623,7 @@ async def handle_text(message: Message):
 )
 
 await message.answer_document(file, caption="📄 <b>AI Response (Large)</b>")
-  elif is_code_request and total_code_lines > 50:
+     elif is_code_request and total_code_lines > 50:
         # ZIP for large code
         zip_buffer = io.BytesIO()
         with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -631,9 +631,9 @@ await message.answer_document(file, caption="📄 <b>AI Response (Large)</b>")
             zf.writestr(f"code{ext}", response)
         zip_buffer.seek(0)
         zip_buffer.name = "ai_code.zip"
-       await message.answer_document(FSInputFile(zip_buffer.name, zip_buffer), caption="📦 <b>AI Generated Code</b>")
+         await message.answer_document(FSInputFile(zip_buffer.name, zip_buffer), caption="📦 <b>AI Generated Code</b>")
     else:
-       await message.answer(response)
+         await message.answer(response)
 
 # ─── PROFILE ────────────────────────────────────────────────────────────
 @router.callback_query(F.data == "profile")
