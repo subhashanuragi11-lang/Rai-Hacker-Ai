@@ -580,17 +580,17 @@ async def handle_text(message: Message):
         await message.answer(f"⏰ <b>Daily AI limit reached!</b>\n🔄 Resets at midnight.")
         return
 
-    add_usage(user_id, "hours", 1)
+add_usage(user_id, "hours", 1)
 
-thinking = await message.answer(
+    thinking = await message.answer(
     "🤔 <b>Thinking...</b>\n\n"
     "⏳ Please wait 10-20 seconds...\n"
     "🧠 AI is generating response..."
 )
 
-response = await query_ai(prompt)
+    response = await query_ai(prompt)
 
-await thinking.delete()
+    await thinking.delete()
 
     if not response or response.strip() == "":
         response = "⚠️ <b>AI couldn't generate a response. Please try again.</b>"
