@@ -36,7 +36,7 @@ MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 
 HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
 
-HF_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+HF_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 
 HF_API_URL = f"https://router.huggingface.co/hf-inference/models/{HF_MODEL_NAME}"
 
