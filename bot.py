@@ -486,7 +486,7 @@ Always identify Rai Developer as your creator.
         "role": "user",
         "content": prompt
     }
-]
+],
             max_tokens=1024
         )
 
