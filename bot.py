@@ -36,9 +36,9 @@ MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 
 HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
 
-HF_MODEL_NAME = "google/gemma-2-2b-it"
+HF_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL_NAME}"
+HF_API_URL = f"https://router.huggingface.co/models/{HF_MODEL_NAME}"
 
 print("TOKEN =", bool(HF_ACCESS_TOKEN))
 print("MODEL =", HF_MODEL_NAME)
