@@ -28,7 +28,7 @@ from aiogram.exceptions import TelegramForbiddenError, TelegramBadRequest
 from aiogram.client.session.aiohttp import AiohttpSession
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────
-BOT_TOKEN = "8361111114:AAF3V9DdHc027RKZzaXpck8U89PNFpLU6y0"
+BOT_TOKEN = "8361111114:AAHI3Me3o5IG0WYl18dFFICluTSFgegK0-0"
 ADMIN_ID = 6406769029
 DEVELOPER_NAME = "RAI DEVELOPER"
 DEVELOPER_USERNAME = "@Subhash_Anuragi_RAI"
