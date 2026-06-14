@@ -28,7 +28,7 @@ from aiogram.exceptions import TelegramForbiddenError, TelegramBadRequest
 from aiogram.client.session.aiohttp import AiohttpSession
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────
-BOT_TOKEN = "8361111114:AAHI3Me3o5IG0WYl18dFFICluTSFgegK0-0"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = 6406769029
 DEVELOPER_NAME = "RAI DEVELOPER"
 DEVELOPER_USERNAME = "@Subhash_Anuragi_RAI"
@@ -36,7 +36,7 @@ MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 
 HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
 
-HF_MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
+HF_MODEL_NAME = "google/gemma-2-2b-it"
 
 HF_API_URL = f"https://router.huggingface.co/hf-inference/models/{HF_MODEL_NAME}"
 
