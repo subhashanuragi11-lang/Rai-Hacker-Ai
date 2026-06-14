@@ -614,26 +614,41 @@ async def handle_text(message: Message):
             return
         add_usage(user_id, "code_lines", total_code_lines)
 
-    # Send response
+# Send response
     if len(response) > 4000:
         # Large response - create text file
         file = BufferedInputFile(
             response.encode(),
             filename="ai_response.txt"
-)
+        )
 
-await message.answer_document(file, caption="📄 <b>AI Response (Large)</b>")
-     elif is_code_request and total_code_lines > 50:
+        await message.answer_document(
+            file,
+            caption="📄 <b>AI Response (Large)</b>"
+        )
+
+    elif is_code_request and total_code_lines > 50:
         # ZIP for large code
         zip_buffer = io.BytesIO()
-        with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
             ext = ".py" if "python" in prompt.lower() else ".txt"
             zf.writestr(f"code{ext}", response)
+
         zip_buffer.seek(0)
-        zip_buffer.name = "ai_code.zip"
-         await message.answer_document(FSInputFile(zip_buffer.name, zip_buffer), caption="📦 <b>AI Generated Code</b>")
+
+        file = BufferedInputFile(
+            zip_buffer.getvalue(),
+            filename="ai_code.zip"
+        )
+
+        await message.answer_document(
+            file,
+            caption="📦 <b>AI Generated Code</b>"
+        )
+
     else:
-         await message.answer(response)
+        await message.answer(response)
 
 # ─── PROFILE ────────────────────────────────────────────────────────────
 @router.callback_query(F.data == "profile")
