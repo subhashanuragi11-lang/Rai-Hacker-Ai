@@ -19,9 +19,8 @@ from aiogram import Bot, Dispatcher, F, Router
 from aiogram.types import (
     Message, InlineKeyboardMarkup, InlineKeyboardButton,
     CallbackQuery, FSInputFile
-from aiogram.types import BufferedInputFile
-
 )
+from aiogram.types import BufferedInputFile
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import Command, CommandObject
