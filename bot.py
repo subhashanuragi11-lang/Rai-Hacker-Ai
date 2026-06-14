@@ -580,7 +580,7 @@ async def handle_text(message: Message):
         await message.answer(f"⏰ <b>Daily AI limit reached!</b>\n🔄 Resets at midnight.")
         return
 
-add_usage(user_id, "hours", 1)
+    add_usage(user_id, "hours", 1)
 
     thinking = await message.answer(
     "🤔 <b>Thinking...</b>\n\n"
