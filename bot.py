@@ -418,7 +418,7 @@ user_ai_state = {}
 
 @router.callback_query(F.data == "ask_ai")
 async def cb_ask_ai(callback: CallbackQuery):
-     print("ASK AI BUTTON CLICKED")
+    print("ASK AI BUTTON CLICKED")
     user_id = callback.from_user.id
     if is_banned(user_id):
         await callback.answer("🚫 You are banned!", show_alert=True)
@@ -507,7 +507,7 @@ async def handle_text(message: Message):
         await message.answer(response)
         return
 
-    print("USER NOT IN AI MODE")
+        print("USER NOT IN AI MODE")
 
     # Handle group request flow
     if user_id in group_request_state:
