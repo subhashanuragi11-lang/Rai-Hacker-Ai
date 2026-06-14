@@ -352,7 +352,7 @@ def main_menu_kb():
 
 # ─── START ──────────────────────────────────────────────────────────────
 
-@router.message(Command("ping"))
+    @router.message(Command("ping"))
 async def ping(message: Message):
     await message.answer("PONG")
     
