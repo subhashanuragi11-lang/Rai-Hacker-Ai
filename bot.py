@@ -35,13 +35,14 @@ DEVELOPER_USERNAME = "@Subhash_Anuragi_RAI"
 MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 
 HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
-print("TOKEN =", bool(HF_ACCESS_TOKEN))
-print("MODEL =", HF_MODEL_NAME)
-print("URL =", HF_API_URL)
 
 HF_MODEL_NAME = "google/gemma-2-2b-it"
 
 HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL_NAME}"
+
+print("TOKEN =", bool(HF_ACCESS_TOKEN))
+print("MODEL =", HF_MODEL_NAME)
+print("URL =", HF_API_URL)
 
 DB_FILE = "bot_data.db"
 
