@@ -615,7 +615,7 @@ async def handle_text(message: Message):
         add_usage(user_id, "code_lines", total_code_lines)
 
     # Send response
-    if len(response) > 4000:
+      if len(response) > 4000:
         # Large response - create text file
         file = BufferedInputFile(
             response.encode(),
