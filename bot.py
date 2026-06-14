@@ -34,7 +34,7 @@ DEVELOPER_NAME = "RAI DEVELOPER"
 DEVELOPER_USERNAME = "@Subhash_Anuragi_RAI"
 MAIN_CHANNEL = "https://t.me/raiaddaarmys"
 
-HF_ACCESS_TOKEN = "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"
+HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
 
 HF_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 
