@@ -524,13 +524,14 @@ Always identify Rai Developer as your creator.
     except Exception as e:
         return f"⚠️ AI Error:\n{str(e)}"
 
-@router.message(F.text)
-async def handle_text(message: Message):
-    print("HANDLE_TEXT =", message.text, flush=True)
 
-    if message.text.startswith("/"):
-        print("COMMAND BLOCKED =", message.text, flush=True)
-        return
+# @router.message(F.text)
+# async def handle_text(message: Message):
+#    print("HANDLE_TEXT =", message.text, flush=True)
+
+ #   if message.text.startswith("/"):
+#        print("COMMAND BLOCKED =", message.text, flush=True)
+#        return
     print("===================================")
     print("MESSAGE RECEIVED =", message.text)
     print("USER ID =", message.from_user.id)
