@@ -30,7 +30,7 @@ from aiogram.client.session.aiohttp import AiohttpSession
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = 6406769029
+ADMIN_ID = 8177768230
 DEVELOPER_NAME = "RAI DEVELOPER"
 DEVELOPER_USERNAME = "@Subhash_Anuragi_RAI"
 MAIN_CHANNEL = "https://t.me/raiaddaarmys"
