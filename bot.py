@@ -41,7 +41,7 @@ print("DEVELOPER_USERNAME =", DEVELOPER_USERNAME)
 
 HF_ACCESS_TOKEN = os.getenv("HF_TOKEN")
 
-HF_MODEL_NAME = "dphn/Dolphin-Mistral-24B-Venice-Edition:featherless-ai"
+HF_MODEL_NAME = "Raideveloper11/Dolphin-Mistral-24B-Venice-Edition-bucket"
 
 client = InferenceClient(
     api_key=HF_ACCESS_TOKEN
