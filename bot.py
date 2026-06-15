@@ -894,7 +894,7 @@ print("LINE 2", flush=True)
 print("LINE 3", flush=True)
 # ─── ADMIN PANEL ──────────────────────────────────────────────────────────
 print("BEFORE ADMIN HANDLER", flush=True)
-print("AFTER ADMIN HANDLER", flush=True)print("ADMIN SECTION LOADED", flush=True)
+print("ADMIN SECTION LOADED", flush=True)
 
 @router.message(Command("admin"))
 async def cmd_admin(message: Message):
