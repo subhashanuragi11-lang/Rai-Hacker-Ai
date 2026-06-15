@@ -922,7 +922,7 @@ async def cmd_admin(message: Message):
             [InlineKeyboardButton(text="📊 Statistics", callback_data="admin_stats")],
         ])
     )
-         print("STEP 4", flush=True)
+    print("STEP 4", flush=True)
 
 @router.callback_query(F.data == "admin_users")
 async def cb_admin_users(callback: CallbackQuery):
