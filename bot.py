@@ -903,16 +903,16 @@ async def cmd_admin(message: Message):
     await message.answer("TEST ADMIN")
     
     if message.from_user.id != ADMIN_ID:
-    print("STEP 2", flush=True)
+        print("STEP 2", flush=True)
         await message.answer("🚫 <b>Unauthorized!</b>")
         return
-    print("STEP 3", flush=True)
+        print("STEP 3", flush=True)
     await message.answer(
         "🔐 <b>Admin Dashboard</b>\n\n"
         f"👋 Welcome, <b>{DEVELOPER_NAME}</b>!",
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="👥 Users", callback_data="admin_users"),
-    print("STEP 4", flush=True)
+        print("STEP 4", flush=True)
              InlineKeyboardButton(text="🚫 Ban User", callback_data="admin_ban")],
             [InlineKeyboardButton(text="✅ Unban User", callback_data="admin_unban"),
              InlineKeyboardButton(text="📢 Broadcast", callback_data="admin_broadcast")],
@@ -923,7 +923,7 @@ async def cmd_admin(message: Message):
             [InlineKeyboardButton(text="📊 Statistics", callback_data="admin_stats")],
         ])
     )
-    print("STEP 5", flush=True)
+         print("STEP 5", flush=True)
 
 @router.callback_query(F.data == "admin_users")
 async def cb_admin_users(callback: CallbackQuery):
