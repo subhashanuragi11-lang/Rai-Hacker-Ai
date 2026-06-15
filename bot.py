@@ -912,7 +912,6 @@ async def cmd_admin(message: Message):
         f"👋 Welcome, <b>{DEVELOPER_NAME}</b>!",
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="👥 Users", callback_data="admin_users"),
-        print("STEP 4", flush=True)
              InlineKeyboardButton(text="🚫 Ban User", callback_data="admin_ban")],
             [InlineKeyboardButton(text="✅ Unban User", callback_data="admin_unban"),
              InlineKeyboardButton(text="📢 Broadcast", callback_data="admin_broadcast")],
@@ -923,12 +922,13 @@ async def cmd_admin(message: Message):
             [InlineKeyboardButton(text="📊 Statistics", callback_data="admin_stats")],
         ])
     )
-         print("STEP 5", flush=True)
+         print("STEP 4", flush=True)
 
 @router.callback_query(F.data == "admin_users")
 async def cb_admin_users(callback: CallbackQuery):
     if callback.from_user.id != ADMIN_ID:
         return
+        print("STEP 5", flush=True)
     conn = get_db()
     c = conn.cursor()
     c.execute("SELECT COUNT(*) FROM users")
