@@ -1,6 +1,7 @@
 
 import os
 import json
+import requests
 import asyncio
 import sqlite3
 import logging
