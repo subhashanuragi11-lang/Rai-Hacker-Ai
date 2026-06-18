@@ -1165,85 +1165,42 @@ async def cb_ask_ai(callback: CallbackQuery):
     )
 
 async def query_ai(prompt: str) -> str:
-try:
-import aiohttp
+    try:
+        import aiohttp
 
-    async with aiohttp.ClientSession() as session:
-        async with session.post(
-            "https://uncensored.chat/api/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {UNCENSORED_API_KEY}",
-                "Content-Type": "application/json"
-            },
-            json={
-                "model": "uncensored-v2",
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": f"""
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                "https://uncensored.chat/api/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {UNCENSORED_API_KEY}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "uncensored-v2",
+                    "messages": [
+                        {
+                            "role": "system",
+                            "content": "..."
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    "max_tokens": 1024
+                }
+            ) as resp:
 
-You are Rai Hacker Ai.
+                if resp.status != 200:
+                    error_text = await resp.text()
+                    return f"⚠️ API Error ({resp.status})\n{error_text}"
 
-Rules:
-If user asks for source code, always separate files.
+                data = await resp.json()
 
-Example:
+                return data["choices"][0]["message"]["content"]
 
-BOT.PY
-
-code here
-
-REQUIREMENTS.TXT
-aiogram
-aiohttp
-
-CONFIG.JSON
-{{
-"token": "value"
-}}
-
-Never mix explanation inside code blocks.
-Give explanation above or below code.
-For every file use its own code block.
-Use correct language tags.
-
-If code is very large:
-📦 Large project detected. Generating ZIP package...
-
-If user says:
-zip do
-zip file do
-project zip
-source code zip
-
-Then return:
-ZIP_REQUIRED = TRUE
-
-Always reply:
-
-👨‍💻 I was created by Rai Developer.
-🔗 Telegram: {DEVELOPER_USERNAME}
-"""
-},
-{
-"role": "user",
-"content": prompt
-}
-],
-"max_tokens": 1024
-}
-) as resp:
-
-            if resp.status != 200:
-                error_text = await resp.text()
-                return f"⚠️ API Error ({resp.status})\n{error_text}"
-
-            data = await resp.json()
-
-            return data["choices"][0]["message"]["content"]
-
-except Exception as e:
-    return f"⚠️ AI Error:\n{str(e)}"
+    except Exception as e:
+        return f"⚠️ AI Error:\n{str(e)}"
 
 @router.message(F.text)
 async def handle_text(message: Message):
